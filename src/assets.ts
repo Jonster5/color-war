@@ -1,5 +1,9 @@
-import { Handle, none, Option } from './raxis';
+import { Handle, none, Option, Raxis } from "./raxis";
 
 export class GameAssets {
-	square: Option<Handle<ImageBitmap[]>> = none;
+    cell: Option<Handle<ImageBitmap[]>> = none;
+    dot: Option<Handle<ImageBitmap[]>> = none;
+    bg: Option<Handle<ImageBitmap[]>> = none;
 }
+
+export const AssetsPlugin = new Raxis.Builder().useGlobal(GameAssets);

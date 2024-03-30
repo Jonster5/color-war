@@ -55,7 +55,10 @@ export class Input {
 	private onpointermove = ((e: PointerEvent) => {
 		e.preventDefault();
 
-		this.pointerState.screenPosition.set(e.pageX / window.innerWidth + 1, e.pageY / window.innerHeight + 1);
+		this.pointerState.screenPosition.set(
+			2 * (e.pageX / window.innerWidth) - 1,
+			-2 * (e.pageY / window.innerHeight) + 1
+		);
 	}).bind(this);
 
 	get keyboard(): Readonly<KeyboardState> {
